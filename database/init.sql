@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS status (
+  id SERIAL PRIMARY KEY,
+  descricao VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS usuarios (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  senha_hash TEXT NOT NULL,
+  status_id INTEGER REFERENCES status(id),
+  criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS produtos (
+  id SERIAL PRIMARY KEY,
+  usuario_id INTEGER REFERENCES usuarios(id),
+  status_id INTEGER REFERENCES status(id),
+  titulo VARCHAR(150) NOT NULL,
+  descricao TEXT,
+  preco NUMERIC(10, 2) NOT NULL,
+  imagem_url TEXT,
+  criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
