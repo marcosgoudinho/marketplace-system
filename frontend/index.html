@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="marketplaceApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/style.css">
+</head>
+<body>
+    <!-- Conteúdo dinâmico -->
+    <div ng-view style="height: 100vh;"></div>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-resource.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/controllers/homeController.js"></script>
+    <script src="js/services/apiService.js"></script>
+    <script src="js/services/cartService.js"></script>
+</body>
+</html> 

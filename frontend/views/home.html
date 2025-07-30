@@ -1,0 +1,68 @@
+<!-- Página inicial do Marketplace -->
+<div class="main" ng-controller="HomeController">
+    <div id="header">
+        <div id="infHeader" class="inRow">
+            <div class="dataInf inRow">
+                <div style="margin-right: 15px;">Ligue para nós (99)99999-9999</div>
+                <div>Email marketsystem&#64;support.com</div>
+            </div>
+            <div class="setting inRow">
+                <select id="currency" ng-model="selectedCurrency">
+                    <option value="BRL">BRL</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+                <select id="language" ng-model="selectedLanguage">
+                    <option value="pt-BR">Português</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+                <div class="login inRow" style="gap: 3px;align-items: center;">
+                    <div class="enterAccount" ng-click="openLogin()">Entrar</div>
+                    <div>/</div>
+                    <div class="enterAccount" ng-click="openRegister()">Registrar-se</div>
+                </div>
+            </div>
+        </div>
+        <div id="optHeader" class="inRow">
+            <div class="title">
+                <img src="/img/Logo.png" style="width: 150px; height: auto;">
+            </div>
+            <div class="menuOption inRow">
+                <div ng-click="navigateTo('home')">Início</div>
+                <div ng-click="navigateTo('produtos')">Produtos</div>
+                <div ng-click="navigateTo('paginas')">Páginas</div>
+                <div ng-click="navigateTo('blog')">Blog</div>
+                <div ng-click="navigateTo('sobre')">Sobre</div>
+                <div ng-click="navigateTo('contato')">Contato</div>
+                <div ng-click="navigateTo('vendedor')">Torne-se um Vendedor</div>
+            </div>
+            <div class="infShop inRow">
+                <div ng-click="openWishlist()"><span class="icon-heart"></span></div>
+                <div ng-click="openCart()"><span class="icon-cart"></span></div>
+            </div>
+        </div>
+        <div id="searchHeader">
+            <div style="align-items: center;height: 100%;width: 100%;display: flex;flex-direction: row;margin-left: 10%; margin-right: 10%;">
+                <div class="categories" ng-click="toggleCategories()">
+                    <div>Todas categorias</div>
+                </div>
+                <div class="searchShop">
+                    <span class="icon-search" style="margin-left: 10px;margin-right: 5px;"></span>
+                    <input type="text" id="inputItem" style="width: 100%;"
+                           placeholder="O que você está procurando?"
+                           ng-model="searchTerm"
+                           ng-keyup="$event.keyCode === 13 && performSearch()">
+                    <button id="bttpesq" ng-click="performSearch()">Pesquisar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="body">
+
+    </div>
+    <div id="footer">
+
+    </div>
+    
+</div> 
